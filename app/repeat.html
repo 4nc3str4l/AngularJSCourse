@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app>
+    <meta charset="utf-8">
+    <head>
+        <title>Using Directives</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body ng-init="people=[{name: 'Cristian', city: 'Castellterçol'}, {name: 'Myriam', city: 'Chaux-de-Fonds'}, {name: 'Cristian', city: 'Castellterçol'}, {name: 'Cristian', city: 'Castellterçol'}]">
+        <ul>
+            <li ng-repeat="person in people">{{ person.name }} {{person.city}}</li>
+        </ul>
+        <br>
+        <table>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    City
+                </td>
+            </tr>
+            <tr ng-repeat="person in people">
+                <td>{{person.name}}</td>
+                <td>{{person.city}}</td>
+            </tr>
+            
+        </table>
+            
+        <script src="js/angular.min.js"></script>
+    </body>
+</html>
