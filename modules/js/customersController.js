@@ -1,6 +1,8 @@
 (function(){
-    var CustomersController =  function($scope){
     
+    
+    var CustomersController =  function($scope, foo, bar){
+        
         $scope.sortBy = 'name';
         $scope.reverse = 'false';
         
@@ -12,6 +14,8 @@
         } 
     };
     
+    CustomersController.$inject = ['$scope'];
+
     angular.module('customersApp').controller('CustomersController', CustomersController);
 }());
 
