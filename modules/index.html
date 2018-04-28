@@ -1,0 +1,31 @@
+<html ng-app = customersApp>
+    <head>
+        <title>Modules</title>
+    </head>
+    <body ng-controller="CustomersController">
+        <h2>Customers</h2>
+        Filter: <input type="text" ng-model="customerFilter.name" />
+        <br/><br />
+        <table>
+            <tr>
+                <th ng-click="doSort('name')">Name</th>
+                <th ng-click="doSort('city')">City</th>
+                <th ng-click="doSort('orderTotal')">Order Total</th>
+                <th ng-click="doSort('joined')">Joined</th>
+            </tr>
+            <tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse | limitTo:4 ">
+                <td>{{ cust.name | uppercase }}</td>
+                <td>{{ cust.city | lowercase }}</td>
+                <td>{{ cust.orderTotal | currency }}</td>
+                <td>{{ cust.joined | date: 'dd-MM-yyyy' }}</td>
+            </tr>
+        </table>
+        <br />
+
+        <span>Total Customers: {{customers.length}}</span>
+        
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/customersController.js"></script>
+    </body>
+</html>
