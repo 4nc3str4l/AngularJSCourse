@@ -1,10 +1,11 @@
 (function(){
     
     
-    var CustomersController =  function($scope, customersService){
+    var CustomersController =  function($scope, customersService, appSetttings){
         
         $scope.sortBy = 'name';
         $scope.reverse = 'false';
+        $scope.appSetttings = appSetttings;
         
         $scope.customers = []
         
@@ -21,7 +22,7 @@
     };
     
     // Used if we want to use uglyfiers
-    CustomersController.$inject = ['$scope', 'customersService'];
+    CustomersController.$inject = ['$scope', 'customersService', 'appSetttings'];
 
     angular.module('customersApp').controller('CustomersController', CustomersController);
 }());
